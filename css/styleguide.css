@@ -1,5 +1,6 @@
 :root { 
   --black: #000000;
+  --crowshead: #1d100af0;
   --ferra: #734848;
   --stiletto: #9b3b3b;
   --white: #ffffff;
@@ -35,6 +36,14 @@
   color: var(--white-2);
   font-family: var(--font-family-concert_one);
   font-size: var(--font-size-xxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.concertone-normal-white-28px {
+  color: var(--white);
+  font-family: var(--font-family-concert_one);
+  font-size: var(--font-size-xxl);
   font-style: normal;
   font-weight: 400;
 }
