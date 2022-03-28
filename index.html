@@ -8,9 +8,12 @@
     <meta name="twitter:card" content="photo" />
     <link rel="stylesheet" type="text/css" href="css/ova01-desktop.css" />
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js"></script>
+   
     <link rel="stylesheet" type="text/css" href="css/styleguide.css" />
 	<link rel="stylesheet" type="text/css" href="css/skills.css" />
     <link rel="stylesheet" type="text/css" href="css/globals.css" />
+    <link rel="stylesheet" type="text/css" href="css/experience.css" />
+   
   </head>
   <body style="margin: 0; background: #ffffff">
     <input type="hidden" id="anPageName" name="page" value="ova01-desktop" />
@@ -29,6 +32,8 @@
             });
           });
         </script>
+
+        
       </div>
       <div class="x6-tQK5wE">
         <div class="personal-I2BeRc concertone-normal-stiletto-25px">Personal</div>
@@ -36,13 +41,59 @@
         <img class="line-1-I2BeRc" src="img/line-1@2x.png" />
         <div class="x04-I2BeRc concertone-normal-white-35px">04</div>
       </div>
-      <div class="x5-tQK5wE smart-layers-pointers">
+      <div class="x5-tQK5wE">
         <img class="line-1-8qT7UE" src="img/line-1@2x.png" />
         <div class="x03-8qT7UE concertone-normal-white-35px">03</div>
         <div class="experience-8qT7UE concertone-normal-stiletto-25px">Experience</div>
         <div class="education-work-8qT7UE concertone-normal-white-28px animate-enter1" show-on-scroll>
           Education/Work
         </div>
+
+        <div id="container">
+          <div class="container_boxes">
+              <!-- Card 1 -->
+              <div class="cardexp card_1" id="card1">
+                  <div class="image"></div>
+                  <h2>The Magnificent Stag</h2>
+                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris 
+                      condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <div class="prev" onclick="prev()">PREV</div>
+                  <div class="next" onclick="next()">NEXT</div>
+              </div>
+  
+              <!-- Card 2 -->
+              <div class="cardexp card_2" id="card2">
+                  <div class="image"></div>
+                  <h2>The Courageous Bear</h2>
+                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris 
+                      condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <div class="prev" onclick="prev()">PREV</div>
+                  <div class="next" onclick="next()">NEXT</div>
+              </div>
+  
+              <!-- Card 3 -->
+              <div class="cardexp card_3" id="card3">
+                  <div class="image"></div>
+                  <h2>The Sneaky Mouse</h2>
+                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris 
+                      condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <div class="prev" onclick="prev()">PREV</div>
+                  <div class="next" onclick="next()">NEXT</div>
+              </div>
+  
+              <!-- Card 3 -->
+              <div class="cardexp card_4" id="card4">
+                  <div class="image"></div>
+                  <h2>The Sneaky Mouse</h2>
+                  <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris 
+                      condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                  <div class="prev" onclick="prev()">PREV</div>
+                  <div class="next" onclick="next()">NEXT</div>
+              </div>
+  
+          </div>
+      </div>
+
       </div>
       <div class="x4-tQK5wE">
         <div class="coding-73qmsX concertone-normal-stiletto-25px">Coding</div>
@@ -127,7 +178,7 @@
   </div>
   <div class="card card__two">
     <div class="card__bg"></div>
-    <img class="card__img" src="https://docs.signalfx.com/en/latest/_images/integration_microsoftiis.png" />
+    <img class="card__img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCPJ8rOPRAduPnUrND4rgIYug_GFkc4a7uCdJbqJiwtn_UxwNmqBJKhTLYB_g6BaQN-Xo&usqp=CAU" />
     
 	
   </div>
@@ -305,6 +356,63 @@ document.addEventListener('mousemove', ({x, y}) => {
     })
 	})
 }, false);
+</script>
+<script>
+  // Cards
+  let card1 = document.getElementById("card1"),
+            card2 = document.getElementById("card2"),
+            card3 = document.getElementById("card3"),
+            card4 = document.getElementById("card4"),
+            card_length = document.querySelectorAll(".cardexp");
+
+        // container
+        let container = document.getElementById("container");
+
+        // Card List
+        let card_list = [card1, card2, card3, card4];
+
+        // next function
+        let counter = 1;
+        function next() {
+            console.log("next:" + counter)
+            if (counter < card_length.length) {
+                card_list[counter].classList.add("active");
+                backgroundFunc(counter);
+                counter += 1;
+            }
+            else {
+                counter = card_length.length;
+            }
+        }
+
+        function prev() {
+            if (counter > 1) {
+                card_list[counter - 1].classList.remove("active");
+                counter -= 1;
+            }
+            else {
+                counter = 1;
+            }
+            backgroundFunc(counter-1);
+            console.log("prev:" + counter)
+        }
+        
+        // background function
+        function backgroundFunc(x) {
+            if (x == 0) {
+                container.style.background = "transparent";
+            }
+            else if (x == 1) {
+                container.style.background = "transparent";
+            }
+            else if (x == 2) {
+                container.style.background = "transparent";
+            }
+            else if (x == 3) {
+                container.style.background = "transparent"
+            }
+        }
+
 </script>
   </body>
 </html>
